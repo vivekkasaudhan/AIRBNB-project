@@ -1,11 +1,12 @@
-import React from 'react' //unnecessary
+import React, { useState } from 'react' //unnecessary
 import { children } from 'react';// unnecessary
 import { createContext } from 'react'  
 export const authDataContext=createContext();
 const AuthContext = ({children}) => {
   let serverUrl="http://localhost:8000"
+  const [loading, setLoading] = useState(false)
   let value={
-    serverUrl
+    serverUrl,loading, setLoading
   }
 
   return (
