@@ -11,7 +11,7 @@ import bookingRouter from "./routes/booking.route.js";
 dotenv.config();
 const port=process.env.PORT||6000;
 app.use(cors({
-    origin:"http://localhost:5173", 
+    origin:"https://airbnb-frontend-per2.onrender.com", 
     credentials:true
 }))
 
