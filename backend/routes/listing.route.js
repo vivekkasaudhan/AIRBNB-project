@@ -14,7 +14,7 @@ listingRouter.post("/add",isAuth,upload.fields([
         name:"image3",maxCount:1
     }
 ]),addListing)
-listingRouter.get("/get",isAuth,getListing);
+listingRouter.get("/get",getListing);
 listingRouter.get("/findlistingByid/:id",isAuth,findListing );
 
 

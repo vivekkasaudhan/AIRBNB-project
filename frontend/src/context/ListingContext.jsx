@@ -2,10 +2,14 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { authDataContext } from "./AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { userDataContext } from "./userContext";
 
 export const listingDataContext = createContext();
 const ListingContext = ({ children }) => {
   let { serverUrl } = useContext(authDataContext);
+  
+
+
 let navigate=useNavigate()
   let [title, setTitle] = useState("");
   let [description, setDescription] = useState("");
@@ -29,6 +33,10 @@ let [searchData,setSearchData]=useState([]);
 
 
 const handleSearch = async (data) => {
+  if (!data || data.trim() === "") {
+    setSearchData(null);
+    return;
+  }
   try {
     let result = await axios.get(
       serverUrl + `/api/listing/search?query=${data}`
@@ -89,7 +97,11 @@ setCategory("");
 
   const handleViewCard=async(id)=>{
     try {
-      let result=await axios.get(serverUrl+`/api/listing/findlistingByid/${id}`,{withCredentials:true})
+      let result=await axios.get(
+  serverUrl + `/api/listing/findlistingByid/${id}`,
+  { withCredentials: true }
+);
+
       setCardDetails(result.data);
       console.log(result);
       navigate("/viewcard")
@@ -115,6 +127,7 @@ const getListing=async()=>{
    },[adding,updating,deleting])
 
  
+
 
 
 
@@ -148,7 +161,7 @@ const getListing=async()=>{
       adding,setAdding,
       listingdata,setListingdata,
       getListing,
-      newlistingdata, setNewListingdata,handleSearch,searchData,
+      newlistingdata, setNewListingdata,handleSearch,searchData,setSearchData,
 handleViewCard,
 cardDetails,setCardDetails,
 updating, setUpdating,
