@@ -11,7 +11,7 @@ This project is built to practice real-world MERN stack development, authenticat
 ---
 
 ## 🧑‍💻 GitHub Repository
-👉 https://github.com/your-username/airbnb
+👉https://github.com/vivekkasaudhan/AIRBNB-project/
 
 ---
 
