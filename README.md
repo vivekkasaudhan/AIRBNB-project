@@ -44,3 +44,7 @@ This project is built to practice real-world MERN stack development, authenticat
 
 ---
 
+## Screenshot
+<img width="1910" height="900" alt="image" src="https://github.com/user-attachments/assets/0df6aff5-8e6b-49c2-83ba-6345b31c65f2" />
+
+
