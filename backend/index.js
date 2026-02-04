@@ -19,7 +19,7 @@ import aiRoute from "./routes/aiRoute.js";
 
 const port=process.env.PORT||6000;
 app.use(cors({
-    origin:"http://localhost:5173", 
+    origin:"https://airbnb-frontend-per2.onrender.com", 
     credentials:true
 }))
 

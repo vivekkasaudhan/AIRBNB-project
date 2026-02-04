@@ -3,7 +3,7 @@ import { children } from 'react';// unnecessary
 import { createContext } from 'react'  
 export const authDataContext=createContext();
 const AuthContext = ({children}) => {
-  let serverUrl="http://localhost:8000"
+  let serverUrl="https://airbnb-project-backend-vd6r.onrender.com"
   const [loading, setLoading] = useState(false)
   let value={
     serverUrl,loading, setLoading
