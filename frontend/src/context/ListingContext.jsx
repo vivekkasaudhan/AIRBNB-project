@@ -32,9 +32,24 @@ let navigate=useNavigate()
 let [searchData,setSearchData]=useState([]);
 
 
+// const handleSearch = async (data) => {
+//   if (!data || data.trim() === "") {
+//     setSearchData(null);
+//     return;
+//   }
+//   try {
+//     let result = await axios.get(
+//       serverUrl + `/api/listing/search?query=${data}`
+//     );
+//     setSearchData(result.data);
+//   } catch (error) {
+//     setSearchData(null);
+//     console.log(error);
+//   }
+// };
 const handleSearch = async (data) => {
   if (!data || data.trim() === "") {
-    setSearchData(null);
+    setSearchData([]); // ✅ FIX
     return;
   }
   try {
@@ -43,7 +58,7 @@ const handleSearch = async (data) => {
     );
     setSearchData(result.data);
   } catch (error) {
-    setSearchData(null);
+    setSearchData([]); // ✅ FIX
     console.log(error);
   }
 };
